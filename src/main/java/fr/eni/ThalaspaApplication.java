@@ -8,6 +8,8 @@ public class ThalaspaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ThalaspaApplication.class, args);
+		
+	
 	}
 
 }
