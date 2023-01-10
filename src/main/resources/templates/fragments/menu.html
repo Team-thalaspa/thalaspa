@@ -1,0 +1,21 @@
+<!-- Navbar -->
+<header>
+	<h1 id="nav-title">
+		<a href="/">Filmo...thèque</a>
+		<th:block data-th-if="${userSession != null}">
+			<span data-th-text="'['+ ${userSession.firstName}+']'"></span>
+		</th:block>
+	</h1>
+	<nav>
+		<ul>
+			<li><a href="/">Accueil</a></li>
+			<li><a href="/cures">Soins</a></li>
+			<th:block
+					th:if="${userSession != null} and ${userSession.isAdmin}">
+					<li><a href="/movies/create">Créer Soin</a></li>
+			</th:block>
+			<li data-th-if="${userSession == null}"><a href="/login">Connexion</a></li>
+			<li data-th-if="${userSession != null}"><a href="/logout">Déconnexion</a></li>
+		</ul>
+	</nav>
+</header>
