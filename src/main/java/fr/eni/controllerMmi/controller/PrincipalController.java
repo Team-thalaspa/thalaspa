@@ -10,7 +10,7 @@ public class PrincipalController {
 	
 	@GetMapping("/")
 	public String accueil() {
-		return "home_view";
+		return "home_cure";
 	}
 
 }
