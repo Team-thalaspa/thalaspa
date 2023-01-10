@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +18,8 @@ private String cureName;
 private int cureDuration;
 private double curePrice;
 private String cureImage;
+
+@ManyToOne
 private Type cureType;
 
 public Cure() {

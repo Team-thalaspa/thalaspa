@@ -1,8 +1,17 @@
 package fr.eni.bo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name ="table_type")
 public class Type {
 
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long typeId;
 	private String label;
 	
