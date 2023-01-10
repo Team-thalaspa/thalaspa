@@ -21,6 +21,7 @@ public class ControllerCure {
 
 	private DaoCure daoCure;
 
+	
 	@Autowired
 	public ControllerCure(DaoCure daoCure) {
 		super();
