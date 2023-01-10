@@ -29,7 +29,6 @@ public class ControllerCart {
 	
 	public List<Cart>  showAllCure() {
 		
-		
 		return   serviceImplCart.findAll();
 	}
 
