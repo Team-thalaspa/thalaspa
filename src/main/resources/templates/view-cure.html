@@ -13,54 +13,12 @@
 <title>Soin</title>
 
 </head>
-<body>
+<body class="uk-container">
 	
 	<div th:replace="fragments/menu"></div>
 
 	<main>
 
-
-		<!-- <div class="card" style="width:18rem;" data-th-each="current :${cures}">
-			<img th:src="@{${current.cureImage}}" class="card-img-top" alt="..." >
-			<div class="card-body">
-				<h5 class="card-title" data-th-field="${current.cureName}"></h5>
-				<p class="card-text" data-th-field="${current.cureDescription}" ></p>
-			</div>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item" data-th-text="${current.cureDuration}">An item</li>
-				<li class="list-group-item" data-th-text="${current.curePrice}"></li>
-				<li class="list-group-item">A third item</li>
-			</ul>
-			<div class="card-body">
-				<a href="#" class="card-link">Card link</a> <a href="#"
-					class="card-link">Another link</a>
-			</div>
-		</div> -->
-
-
-<table>
-			<thead>
-				<tr>
-					<th>Nom</th>
-					<th>Description</th>
-					<th>Duree</th>
-					<th>Prix</th>
-					<th>ville</th>
-					
-				</tr>
-			</thead>
-			<tbody>
-				<tr data-th-each="current :${cures}">
-					<td data-th-text="${current.cureName}"> </td>
-					<td data-th-text="${current.cureDescription}"> </td>
-					<td data-th-text="${current.cureDuration}"> </td>
-					<td data-th-text="${current.curePrice} "> </td>
-					<td th:src="@{${current.cureImage}}" > </td>
-					
-				</tr>
-				
-			</tbody>
-		</table>
 
 		<div
 			class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
@@ -77,13 +35,14 @@
 					<ul>
 						<li data-th-text="${current.cureDuration}"></li>
 						<li data-th-text="${current.curePrice} "></li>
+						<li data-th-text="${current.cureType}"></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 
 		
-
+<div th:replace="fragments/footer"></div>
 
 	</main>
 	

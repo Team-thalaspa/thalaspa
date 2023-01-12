@@ -20,16 +20,17 @@ public class ControllerConnection {
 	private ServiceConnection serviceConnection;
 	
 	@Autowired
-	public ControllerConnection() {
+	public ControllerConnection(ServiceConnection serviceConnection) {
 		this.serviceConnection = serviceConnection;
 	}
 	
 	@GetMapping("/login")
-	public String login() {
+	public String login(Model model) {
+		User user = new User ();
+		model.addAttribute("user", user);
 		return "view-login";
 	}
 	
-
 
 	@PostMapping("/login")
 	public String login(@RequestParam(required = true) String email, @RequestParam(required = true) String password,
@@ -55,16 +56,3 @@ public class ControllerConnection {
 	
 	
 }
-
-@PostMapping("/login")
-public String login(@RequestParam(required=true)String email, String password, Model model) {
-	String retour = "view-login";
-	User user = serviceConnection.login(email, password);
-	if ( user != null) {
-		model.addAttribute("userSession", user);
-		retour = "redirect:/cures";
-	}
-	return retour;
-	}
-}
-

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- UIkit CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/js/uikit.min.js"
+	defer></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/js/uikit-icons.min.js"
+	defer></script>
+<title>Soin</title>
+
+</head>
+<body class="uk-container">
+
+	<div th:replace="fragments/menu"></div>
+	
+	<hr>
+
+	<main>
+		
+	
+	<form method="post"
+				data-th-action="@{/cures/saveCure}" data-th-object="${cure}">
+    <fieldset class="uk-fieldset">
+
+        <legend class="uk-legend">Ajout Soin</legend>
+        
+        <div class="uk-margin">
+            <select class="uk-select" aria-label="Select" type="text">
+            <option value="" name="cureType">--Type Soin--</option>
+						    <option value="Hammman">Hammman</option>
+						    <option value="Spa privatif">Spa privatif</option>
+						    <option value="Massage duo">Massage duo</option>
+						    <option value="Rituel japonais">Rituel japonais</option>
+                
+            </select>
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text"  aria-label="Input"
+             data-th-field="*{cureName}"   placeholder="Saisir le nom soin">
+        </div>
+
+
+        <div class="uk-margin">
+            <textarea class="uk-textarea" rows="5" placeholder="Description..." aria-label="Textarea" data-th-field="*{cureDescription}"></textarea>
+        </div>
+        
+        <div class="uk-margin">
+            <input class="uk-input" type="text" data-th-field="*{cureDuration}" placeholder="Saisir la durée" aria-label="Input">
+        </div>
+        
+        <div class="uk-margin">
+            <input class="uk-input" type="text" data-th-field="*{curePrice}" placeholder="Saisir le prix" aria-label="Input">
+        </div>
+        
+        <div class="uk-margin">
+            <input class="uk-input" type="text" data-th-field="*{cureImage}" aria-label="Input" placeholder="Lien image">
+        </div>
+        
+
+        <button class="uk-button uk-button-default">Créer</button>
+
+        
+
+    </fieldset>
+</form>
+	</main>
+	<div th:replace="fragments/footer"></div>
+</body>
+</html>

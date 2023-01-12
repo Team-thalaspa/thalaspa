@@ -16,29 +16,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import fr.eni.bll.ServiceCure;
-import fr.eni.bll.ServiceType;
+
 import fr.eni.bll.exception.BusinessException;
 import fr.eni.bo.Cure;
-import fr.eni.bo.Type;
+
 
 @Controller
 @RequestMapping("/cures")
-@SessionAttributes({ "userSession", "typeCure" })
+@SessionAttributes({ "userSession" })
 
 public class ControllerCure {
 
 	private ServiceCure serviceCure;
-	private ServiceType serviceType;
+	
 
 	@Autowired
-	public ControllerCure(ServiceCure serviceCure, ServiceType serviceType) {
+	public ControllerCure(ServiceCure serviceCure) {
 		super();
 		this.serviceCure = serviceCure;
-		this.serviceType = serviceType;
+		
 	}
 
 	@GetMapping
-	public String showAllMovies(Model model) {
+	public String showAllCures(Model model) {
 		Iterable<Cure> lstCure = serviceCure.getCureAll();
 		if (lstCure == null) {
 			lstCure = new ArrayList<>();
@@ -57,7 +57,7 @@ public class ControllerCure {
 		Cure cure = new Cure();
 		// Ajout de l'instance dans le modèle
 		model.addAttribute("cure", cure);
-		retour = "view-form-cure";
+		retour = "view-add-cure";
 		// }
 		return retour;
 
@@ -99,13 +99,8 @@ public class ControllerCure {
 		//}
 		
 		
-		return "view-form-cure";
+		return "view-add-cure";
 	}
 
-	// Injection en session des listes type de soin
-	@ModelAttribute("typeCure")
-	public List<Type> getAllTypeCure() {
-		return serviceType.findAll();
-
-	}
+	
 }

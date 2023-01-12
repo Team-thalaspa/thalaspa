@@ -19,9 +19,7 @@ private String cureDescription;
 private int cureDuration;
 private double curePrice;
 private String cureImage;
-
-@ManyToOne
-private Type cureType;
+private String cureType;
 
 public Cure() {
 	super();
@@ -32,7 +30,7 @@ public Cure() {
 
 
 public Cure(String cureName, String cureDescription, int cureDuration, double curePrice, String cureImage,
-		Type cureType) {
+		String cureType) {
 	super();
 	this.cureName = cureName;
 	this.cureDescription = cureDescription;
@@ -47,7 +45,7 @@ public Cure(String cureName, String cureDescription, int cureDuration, double cu
 
 
 public Cure(long idCure, String cureName, String cureDescription, int cureDuration, double curePrice, String cureImage,
-		Type cureType) {
+		String cureType) {
 	super();
 	this.idCure = idCure;
 	this.cureName = cureName;
@@ -102,11 +100,11 @@ public void setCureImage(String cureImage) {
 	this.cureImage = cureImage;
 }
 
-public Type getCureType() {
+public String getCureType() {
 	return cureType;
 }
 
-public void setCureType(Type cureType) {
+public void setCureType(String cureType) {
 	this.cureType = cureType;
 }
 

@@ -4,21 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- UIkit CSS -->
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-	crossorigin="anonymous">
+	href="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/css/uikit.min.css" />
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-	crossorigin="anonymous">
+<!-- UIkit JS -->
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/js/uikit.min.js"
+	defer></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/js/uikit-icons.min.js"
+	defer></script>
 <title>LOGIN</title>
 </head>
-<body>
-
-<h1>CONNEXION</h1>
+<body class="uk-container">
 <div th:replace="fragments/menu"></div>
+<hr>
+<!-- <h1>CONNEXION</h1>
+
 <form action="/login" method="post">
 			<h1>Se connecter</h1>
 			<ul class="flex-outer">
@@ -30,13 +33,43 @@
 					<button type="submit">Connecter</button>
 				</li>
 			</ul>
-		</form>
+		</form> -->
+		
+		
+		<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+	<div class="uk-width-1-1">
+		<div class="uk-container">
+			<div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+				<div class="uk-width-1-1@m">
+					<div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+						<h3 class="uk-card-title uk-text-center">Welcome back!</h3>
+						<form action="/login" method="post">
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<span class="uk-form-icon" uk-icon="icon: mail"></span>
+									<input class="uk-input uk-form-large" type="text" name="email" required>
+								</div>
+							</div>
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									<span class="uk-form-icon" uk-icon="icon: lock"></span>
+									<input class="uk-input uk-form-large" type="password" name="password" required>	
+								</div>
+							</div>
+							<div class="uk-margin">
+								<button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Connexion</button>
+							</div>
+							<div class="uk-text-small uk-text-center">
+								Nouveau User? <a href="/registration">Créer un compte, c'est gratuit!</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-		crossorigin="anonymous"></script>
+	<div th:replace="fragments/footer"></div>
 </body>
 </html>

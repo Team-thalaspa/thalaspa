@@ -3,7 +3,7 @@
 	<!-- <h1 id="nav-title">
 		<a href="/">THALASPA</a>
 		<th:block data-th-if="${userSession != null}">
-			<span data-th-text="'['+ ${userSession.firstName}+']'"></span>
+			<span data-th-text="'['+ ${userSession.Name}+']'"></span>
 		</th:block>
 	</h1>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -29,12 +29,13 @@
 				
 				<a href="/" class="uk-navbar-item uk-logo">THALASPA</a>
 				<li class=><a href="/">Accueil</a></li>
-				<li><a href="/cures">Soins</a></li>
-				<li><a href="/cures/saveCure">Créer Soin</a></li>
 				
 				
-				<th:block th:if="${userSession != null} and ${userSession.isAdmin}">
-					<li><a href="/cure/create">Créer Soin</a></li>
+				
+				
+				<th:block th:if="${userSession != null}">
+					<li><a href="/cures/saveCure">Créer Soin</a></li>
+					<li><a href="/cures">Soins</a></li>
 					
 				</th:block>
 				<li data-th-if="${userSession == null}"><a href="/login">Connexion</a></li>
@@ -42,20 +43,26 @@
 				
 				
 			</ul>
-			<!-- <li><a href="#">Parent</a>
-					<div class="uk-navbar-dropdown">
-						<ul class="uk-nav uk-navbar-dropdown-nav">
-							<li class="uk-active"><a href="#">Active</a></li>
-							<li><a href="#">Item</a></li>
-							<li><a href="#">Item</a></li>
-						</ul>
-					</div></li> -->
+			
 
 		 	
 		 	
 
 		</div>
-		<div class="uk-navbar-right"><a href=""> <img class="uk-navbar-right" alt="" src="/static/images/icons8-shopping-cart-80.png"> </a> </div>
+		<div class="uk-navbar-right">
+			
+			<th:block data-th-if="${userSession != null}">
+			<div >
+				<a uk-icon="icon: user"></a> 
+					<span data-th-text=" ${userSession.firstName}"></span>
+					 
+			</div>
+		<div>
+		<a href=""> <img class="uk-navbar-right" alt="" src="/images/icons8-favorite-cart-30.png"> </a>
+		</div>
+		</th:block>
+		
+		</div>
 	</nav>
 
 </header>
