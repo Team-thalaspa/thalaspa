@@ -5,12 +5,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
-//@SessionAttributes({ "userSession" })
+@SessionAttributes({ "userSession" })
 public class PrincipalController {
 	
 	@GetMapping("/")
 	public String accueil() {
-		return "home_cure";
+		return "index";
 	}
 
 }

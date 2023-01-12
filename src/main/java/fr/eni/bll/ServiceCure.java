@@ -1,22 +1,25 @@
 package fr.eni.bll;
 
+
 import java.util.List;
+import java.util.Optional;
+
 
 import fr.eni.bo.Cure;
-import fr.eni.bo.Type;
+
 
 
 
 
 public interface ServiceCure {
 	
-	Cure getCureById(long id);
-
-	List<Cure> findAllCure();
-
-	List<Type> getTypeCure();
-
-	void saveCure(Cure cure);
+public Optional<Cure> getCart(final Long id) ;
+	
+	public List<Cure> getCureAll() ;
+	
+	public void deleteCure(final Long id) ;
+	
+	public Cure saveCure(Cure cure);
 
 	
 

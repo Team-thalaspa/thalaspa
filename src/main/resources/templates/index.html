@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- UIkit CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/js/uikit.min.js"
+	defer></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/js/uikit-icons.min.js"
+	defer></script>
+<title>accueil</title>
+
+</head>
+<body  class="uk-container">
+
+	<div th:replace="fragments/menu"></div>
+
+	<main>
+		<div
+			class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+			uk-grid>
+			<div class="uk-card-media-left uk-cover-container">
+				<img
+					src="https://media.istockphoto.com/id/1286682876/fr/photo/articles-de-soins-de-beaut%C3%A9-pour-les-proc%C3%A9dures-de-spa-sur-table-en-bois-blanc-pierres-de.jpg?s=612x612&w=0&k=20&c=zpzsj6uR7nkbvuy8xG8q_R79gdIplwkuO3HurSoPs7w="
+					alt="" uk-cover>
+				<canvas width="600" height="400"></canvas>
+			</div>
+			<div>
+				<div class="uk-card-body">
+					<h3 class="uk-card-title">LA PETITE HISTOIRE</h3>
+					<p>Éclos au printemps 2007, Esprit de Corps est né d’une envie
+						de liberté et d’un besoin grandissant d’épanouissement
+						professionnel. C’est après diférentes expériences dans l’univers
+						de l’esthétique et du bien-être qu’Adeline crée sa propre
+						entreprise afn d’être en accord avec ses valeurs, ses convictions
+						et sa philosophie de travail. .</p>
+				</div>
+			</div>
+		</div>
+
+		<div
+			class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+			uk-grid>
+			<div class="uk-flex-last@s uk-card-media-right uk-cover-container">
+				<img
+					src="https://thumbs.dreamstime.com/b/le-maquillage-de-soins-la-peau-et-visage-beaut%C3%A9-femme-naturels-composent-117018135.jpg"
+					alt="" uk-cover>
+				<canvas width="600" height="400"></canvas>
+			</div>
+			<div>
+				<div class="uk-card-body">
+					<h3 class="uk-card-title">LE LIEU</h3>
+					<p>Aujourd’hui, nous vous accueillons dans un espace de 170 m2
+						qui comprend une partie détente avec un hammam, trois spacieuses
+						cabines de massages et un espace de repos. La partie institut se
+						compose de deux cabines dédiées aux prestations esthétiques, un
+						point d’accueil et attente, un espace vente de maquillage et
+						produits cosmétiques. .</p>
+				</div>
+			</div>
+		</div>
+
+		<div
+			class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin"
+			uk-grid>
+			<div class="uk-card-media-left uk-cover-container">
+				<img
+					src="https://media.istockphoto.com/id/1317679771/fr/photo/esth%C3%A9ticienne-appliquant-la-cr%C3%A8me-blanche-sp%C3%A9ciale-pour-le-patient.jpg?s=612x612&w=0&k=20&c=nKVJtJF0vUiLPfNj9Bk1qRE15hr8poPohAkxijXHl2U="
+					alt="" uk-cover>
+				<canvas width="600" height="400"></canvas>
+			</div>
+			<div>
+				<div class="uk-card-body">
+					<h3 class="uk-card-title">L’ÉQUIPE</h3>
+					<p>Aujourd’hui, ce sont 7 personnes qui accompagnent Adeline
+						dans cette aventure et partagent cette philosophie de travail avec
+						passion pour les soins et les relations humaines. Une équipe
+						chaleureuse, enveloppante et rassurante est présente pour vous
+						permettre de vous détendre et de profter pleinement de votre soin,
+						le tout dans une ambiance propice au calme et à la détente. .</p>
+				</div>
+			</div>
+		</div>
+
+	</main>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+		
+		<div th:replace="fragments/footer"></div>
+</body>
+</html>

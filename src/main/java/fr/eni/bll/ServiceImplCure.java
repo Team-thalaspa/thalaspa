@@ -1,37 +1,55 @@
 package fr.eni.bll;
 
+
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
 import fr.eni.bo.Cure;
-import fr.eni.bo.Type;
+import fr.eni.dal.DaoCure;
+
 
 @Service
 public class ServiceImplCure implements ServiceCure {
+	
+	private DaoCure daoCure;
+	
+	
 
+	public ServiceImplCure(DaoCure daoCure) {
+		super();
+		this.daoCure = daoCure;
+	}
+	
 	@Override
-	public Cure getCureById(long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Cure> getCureAll() {
+		
+		return daoCure.findAll();
+	}
+	
+	@Override
+	public Cure saveCure(Cure cure) {
+		return daoCure.save(cure);
 	}
 
-	@Override
-	public List<Cure> findAllCure() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	/************************PAs Besion pour l'instant ************************/
 
 	@Override
-	public List<Type> getTypeCure() {
+	public Optional<Cure> getCart(Long id) {
 		// TODO Auto-generated method stub
-		return null;
+		return Optional.empty();
 	}
 
+	
+
 	@Override
-	public void saveCure(Cure cure) {
+	public void deleteCure(Long id) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
+	
 
 }

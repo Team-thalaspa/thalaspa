@@ -22,6 +22,7 @@ public class User {
 	private String zipCode;
 	private String city;
 	private boolean admin = false;
+	
 	public long getIdUser() {
 		return idUser;
 	}
@@ -82,6 +83,12 @@ public class User {
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
+	
+	public User() {
+		
+	}
+	
+	
 	public User(long idUser, String lastName, String firstName, String email, String phoneNumber, String password,
 			String street, String zipCode, String city, boolean admin) {
 		super();
@@ -109,6 +116,15 @@ public class User {
 		this.city = city;
 		this.admin = admin;
 	}
+	
+	
+	
+	public User(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
