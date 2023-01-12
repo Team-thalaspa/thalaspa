@@ -23,6 +23,14 @@ public class User {
 	private String city;
 	private boolean admin = false;
 	
+
+	
+	
+	public User() {
+		super();
+	}
+	
+	
 	public long getIdUser() {
 		return idUser;
 	}
@@ -84,9 +92,6 @@ public class User {
 		this.admin = admin;
 	}
 	
-	public User() {
-		
-	}
 	
 	
 	public User(long idUser, String lastName, String firstName, String email, String phoneNumber, String password,

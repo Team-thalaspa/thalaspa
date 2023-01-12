@@ -24,7 +24,7 @@
 	<hr>
 
 	<main>
-	
+
 	<form method="post"
 				data-th-action="@{/cures/saveCure}" data-th-object="${cure}">
     <fieldset class="uk-fieldset">
@@ -33,7 +33,11 @@
         
         <div class="uk-margin">
             <select class="uk-select" aria-label="Select" type="text">
+
             <option value="">--Type Soin--</option>
+
+            <option value="" name="cureType">--Type Soin--</option>
+
 						    <option value="Hammman">Hammman</option>
 						    <option value="Spa privatif">Spa privatif</option>
 						    <option value="Massage duo">Massage duo</option>
@@ -41,6 +45,7 @@
                 
             </select>
         </div>
+
 
 <!--         <div class="uk-margin"> -->
 <!--             <input class="uk-input" type="text"  aria-label="Input"  data-th-field="*{cureName}"   placeholder="Saisir le nom soin"> -->
@@ -62,6 +67,29 @@
 <!--         <div class="uk-margin"> -->
 <!--             <input class="uk-input" type="text" data-th-field="*{cureImage}" aria-label="Input" placeholder="Lien image"> -->
 <!--         </div> -->
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text"  aria-label="Input"
+             data-th-field="*{cureName}"   placeholder="Saisir le nom soin">
+        </div>
+
+
+        <div class="uk-margin">
+            <textarea class="uk-textarea" rows="5" placeholder="Description..." aria-label="Textarea" data-th-field="*{cureDescription}"></textarea>
+        </div>
+        
+        <div class="uk-margin">
+            <input class="uk-input" type="text" data-th-field="*{cureDuration}" placeholder="Saisir la durée" aria-label="Input">
+        </div>
+        
+        <div class="uk-margin">
+            <input class="uk-input" type="text" data-th-field="*{curePrice}" placeholder="Saisir le prix" aria-label="Input">
+        </div>
+        
+        <div class="uk-margin">
+            <input class="uk-input" type="text" data-th-field="*{cureImage}" aria-label="Input" placeholder="Lien image">
+        </div>
+
         
 
         <button class="uk-button uk-button-default">Créer</button>

@@ -136,3 +136,45 @@
 
 
 </form>
+
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/js/uikit.min.js"
+	defer></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/uikit@3.15.20/dist/js/uikit-icons.min.js"
+	defer></script>
+<title>s'inscrire</title>
+
+</head>
+<body class="uk-container">
+<h1>s'inscrire</h1>
+	<div th:replace="fragments/menu"></div>
+
+	<main>
+		<form data-th-action="@{/registration}" data-th-object="${user}" method="post">
+<ul>
+
+
+<li><input required type = "text" id ="inputlastN" data-th-field="*{lastName}" placeholder="Nom"></input></li> 
+<li><input required type = "text" id ="inputfirstN" data-th-field="*{firstName}" placeholder="Prénom"></input></li> 
+<li><input required type = "text" id ="inputEmail" data-th-field="*{email}" placeholder="Email*"></input></li>
+<li><input required type = "text" id ="inputTelephone" data-th-field="*{phoneNumber}" placeholder="Téléphone*"></input></li>
+<li><input required type = "text" id ="inputPassw" data-th-field="*{password}" placeholder="Mot de passe*"></input></li>
+<li><input required type = "text" id ="inputStreet" data-th-field="*{street}" placeholder="Street*"></input></li>
+<li><input required type = "text" id ="inputZipCode" data-th-field="*{zipCode}" placeholder="zipCode*"></input></li>
+<li><input required type = "text" id ="inputCity" data-th-field="*{city}" placeholder="City*"></input></li> 
+
+<button type="submit">Valider</button>
+
+</ul>
+
+</form>
+	</main>
+	<div th:replace="fragments/footer"></div>
+</body>
+</html>
+

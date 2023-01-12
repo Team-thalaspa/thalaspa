@@ -6,6 +6,7 @@ import fr.eni.bo.User;
 
 public interface DaoUser extends JpaRepository<User, Long> {
 
+
 	 User getUserByEmailAndPassword (String email, String password); 
 	
-}
+	}

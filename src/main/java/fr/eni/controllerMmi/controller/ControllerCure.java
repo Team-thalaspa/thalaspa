@@ -37,7 +37,9 @@ public class ControllerCure {
 		
 	}
 
+
 	@GetMapping 
+
 	public String showAllCures(Model model) {
 		Iterable<Cure> lstCure = serviceCure.getCureAll();
 		if (lstCure == null) {
