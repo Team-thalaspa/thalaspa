@@ -30,6 +30,7 @@ public class ControllerConnection {
 	}
 	
 
+
 	@PostMapping("/login")
 	public String login(@RequestParam(required = true) String email, @RequestParam(required = true) String password,
 			Model model) {
@@ -54,3 +55,16 @@ public class ControllerConnection {
 	
 	
 }
+
+@PostMapping("/login")
+public String login(@RequestParam(required=true)String email, String password, Model model) {
+	String retour = "view-login";
+	User user = serviceConnection.login(email, password);
+	if ( user != null) {
+		model.addAttribute("userSession", user);
+		retour = "redirect:/cures";
+	}
+	return retour;
+	}
+}
+
