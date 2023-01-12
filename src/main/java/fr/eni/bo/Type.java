@@ -16,8 +16,6 @@ public class Type {
 	private String label;
 	
 	
-	
-
 
 	public Type() {
 		super();

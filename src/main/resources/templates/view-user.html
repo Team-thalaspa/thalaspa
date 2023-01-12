@@ -1,16 +1,62 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" href="/images/logothalaspa.png">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
 <title>les clients</title>
 
 </head>
 <body>
-	<h1>les clients</h1>
+	<h2>les clients</h2>
 	<div th:replace="fragments/menu"></div>
 
 	<main>
 		
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Nom</th>
+					<th>Telephone</th>
+					<th>email</th>
+					<th>ville</th>
+					
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-th-each="current :${users}">
+					<td data-th-text="${current.idUser}"> </td>
+					<td data-th-text="${current.firstName}"> </td>
+					<td data-th-text="${current.phoneNumber}"> </td>
+					<td data-th-text="${current.email} "> </td>
+					<td data-th-text="${current.city} "> </td>
+					
+				</tr>
+				
+			</tbody>
+		</table>
+		
+		
 	</main>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
 </body>
 </html>

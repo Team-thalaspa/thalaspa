@@ -22,6 +22,11 @@ public class User {
 	private String zipCode;
 	private String city;
 	private boolean admin = false;
+	
+	
+	public User() {
+		super();
+	}
 	public long getIdUser() {
 		return idUser;
 	}

@@ -1,21 +1,61 @@
 <!-- Navbar -->
 <header>
-	<h1 id="nav-title">
-		<a href="/">Filmo...thèque</a>
+	<!-- <h1 id="nav-title">
+		<a href="/">THALASPA</a>
 		<th:block data-th-if="${userSession != null}">
 			<span data-th-text="'['+ ${userSession.firstName}+']'"></span>
 		</th:block>
 	</h1>
-	<nav>
-		<ul>
-			<li><a href="/">Accueil</a></li>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<ul class="container">
+			<li class=><a href="/">Accueil</a></li>
 			<li><a href="/cures">Soins</a></li>
+			<li><a href="/cures/saveCure">Créer Soin</a></li>
 			<th:block
 					th:if="${userSession != null} and ${userSession.isAdmin}">
-					<li><a href="/movies/create">Créer Soin</a></li>
+					<li><a href="/cure/create">Créer Soin</a></li>
 			</th:block>
 			<li data-th-if="${userSession == null}"><a href="/login">Connexion</a></li>
 			<li data-th-if="${userSession != null}"><a href="/logout">Déconnexion</a></li>
 		</ul>
+	</nav> -->
+
+
+	<nav class="uk-navbar-container" uk-navbar>
+		
+		<div class="uk-navbar-left">
+		
+			<ul class="uk-navbar-nav">
+				
+				<a href="/" class="uk-navbar-item uk-logo">THALASPA</a>
+				<li class=><a href="/">Accueil</a></li>
+				<li><a href="/cures">Soins</a></li>
+				<li><a href="/cures/saveCure">Créer Soin</a></li>
+				
+				
+				<th:block th:if="${userSession != null} and ${userSession.isAdmin}">
+					<li><a href="/cure/create">Créer Soin</a></li>
+					
+				</th:block>
+				<li data-th-if="${userSession == null}"><a href="/login">Connexion</a></li>
+				<li data-th-if="${userSession != null}"><a href="/logout">Déconnexion</a></li>
+				
+				
+			</ul>
+			<!-- <li><a href="#">Parent</a>
+					<div class="uk-navbar-dropdown">
+						<ul class="uk-nav uk-navbar-dropdown-nav">
+							<li class="uk-active"><a href="#">Active</a></li>
+							<li><a href="#">Item</a></li>
+							<li><a href="#">Item</a></li>
+						</ul>
+					</div></li> -->
+
+		 	
+		 	
+
+		</div>
+		<div class="uk-navbar-right"><a href=""> <img class="uk-navbar-right" alt="" src="/static/images/icons8-shopping-cart-80.png"> </a> </div>
 	</nav>
+
 </header>
